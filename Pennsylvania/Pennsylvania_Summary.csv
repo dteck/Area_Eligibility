@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"Pennsylvania",4204,710501,516790,1529,92512,62696,36.3701236917222,13.0206713291044,12.1318136960854,4006,206000
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"Pennsylvania",4204,710501,516790,105597,1529,92512,62696,36.3701236917222,13.0206713291044,12.1318136960854,4006,206000

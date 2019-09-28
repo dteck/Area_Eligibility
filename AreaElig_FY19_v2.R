@@ -379,7 +379,7 @@ for (r in seq(1,56,1)){
                                                                     '<b>Identified Under 18:</b>', BGSubsets[[r]][[1]]$ID18, '<br>',
                                                                     '<b>Total Under 18:</b>', BGSubsets[[r]][[1]]$Tot18, '<br>',
                                                                     '<b>Identified Under 12:</b>', BGSubsets[[r]][[1]]$ID12, '<br>',
-                                                                    '<b>Total Under 18:</b>', BGSubsets[[r]][[1]]$Tot12, '<br>'))
+                                                                    '<b>Total Under 12:</b>', BGSubsets[[r]][[1]]$Tot12, '<br>'))
     BGLeaflets[[r]]<- BGLeaflets[[r]] %>% addPolygons(data=BGSubsets[[r]][[2]],
                                                       weight = 1,
                                                       fill = TRUE,
@@ -400,7 +400,7 @@ for (r in seq(1,56,1)){
                                                                     '<b>Identified Under 18:</b>', BGSubsets[[r]][[2]]$ID18, '<br>',
                                                                     '<b>Total Under 18:</b>', BGSubsets[[r]][[2]]$Tot18, '<br>',
                                                                     '<b>Identified Under 12:</b>', BGSubsets[[r]][[2]]$ID12, '<br>',
-                                                                    '<b>Total Under 18:</b>', BGSubsets[[r]][[2]]$Tot12, '<br>'))
+                                                                    '<b>Total Under 12:</b>', BGSubsets[[r]][[2]]$Tot12, '<br>'))
     BGLeaflets[[r]]<- BGLeaflets[[r]] %>% addPolygons(data=BGSubsets[[r]][[3]],
                                                       weight = 1,
                                                       fill = TRUE,
@@ -421,7 +421,7 @@ for (r in seq(1,56,1)){
                                                                     '<b>Identified Under 18:</b>', BGSubsets[[r]][[3]]$ID18, '<br>',
                                                                     '<b>Total Under 18:</b>', BGSubsets[[r]][[3]]$Tot18, '<br>',
                                                                     '<b>Identified Under 12:</b>', BGSubsets[[r]][[3]]$ID12, '<br>',
-                                                                    '<b>Total Under 18:</b>', BGSubsets[[r]][[3]]$Tot12, '<br><hr>',
+                                                                    '<b>Total Under 12:</b>', BGSubsets[[r]][[3]]$Tot12, '<br><hr>',
                                                                     '<b><center>Calculation</center></b><hr>',
                                                                     '<table border="1">
                                                                       <tr>
@@ -490,8 +490,24 @@ for (r in seq(1,56,1)){
     }
     name<-paste(StateOutline[[r]]$NAME,"_FY19.html", sep="")
     name<-gsub(" ","_",name)
+    
+    #write leaflet maps
     htmlwidgets::saveWidget(BGLeaflets[[r]], name, selfcontained = TRUE)
-    write.csv(BGJoin[[r]],paste(StateOutline[[r]]$NAME,".csv", sep = ""), row.names = FALSE)
+    
+    
+    #creates summary of the number of positive and negative results for each block group
+    res<-StateDataAll[[r]] %>%
+      group_by(GEOID) %>%
+      summarize(combinations=length(weightPerc18),
+                weightPerc18_Yes =sum(weightPerc18>=50),
+                weightPerc18_No = sum(weightPerc18<50),
+                weightPerc12_Yes = sum(weightPerc12>=50),
+                weightPerc12_No = sum(weightPerc12<50))
+    
+    state<-merge.data.frame(BGJoin[[r]], res, by='GEOID', all.x = TRUE)
+    
+    write.csv(state,paste(StateOutline[[r]]$NAME,".csv", sep = ""), row.names = FALSE)
+    #write.csv(BGJoin[[r]],paste(StateOutline[[r]]$NAME,".csv", sep = ""), row.names = FALSE)
     saveRDS(BGSubsets[[r]][[1]], "Elig_Yes.rds")
     saveRDS(BGSubsets[[r]][[2]], "Elig_No.rds")
     saveRDS(BGSubsets[[r]][[3]], "Elig_Calc.rds")
@@ -501,6 +517,7 @@ for (r in seq(1,56,1)){
       Under18Yes=sum(BGSubsets[[r]][[1]]$ID18), # Number of USDA identified under 18
       Under12Yes=sum(BGSubsets[[r]][[1]]$ID12), # Number of USDA identified under 12
       
+      Combinations=sum(res$combinations),
       AreasCalc=length(BGSubsets[[r]][[3]]$GEOID), # number of calc eligable areas
       Under18Calc=sum(BGSubsets[[r]][[3]]$ID18), # Number of calc identified under 18
       Under12Calc=sum(BGSubsets[[r]][[3]]$ID12), # Number of calc identified under 12
@@ -519,33 +536,6 @@ for (r in seq(1,56,1)){
 }
 #------
 write.csv(SumAll, "Overall_Summary.csv", row.names = FALSE)
-
-
-
-
-# test<-data.frame()
-# #Create list of block groups in each state
-# BGOutline<-list() #create list to hold Block Group shapes
-# for (i in seq(1,56,1)){ #pull county shapes for each state by FIPS code
-#   if (i %in% c(03,07,14,43,52)){ # list of non states, exclude
-#     print(paste('Do not pull BG:', i))
-#   } else {
-#     print(i)
-#     test<-rbind(test,Over50[[i]])
-#   }
-# }
-
-
-#merge Combined=USDAData and Over50
-
-#merge combined and BGoutline
-#build maps
-#build metrics
-
-
-
-
-
 
 
 

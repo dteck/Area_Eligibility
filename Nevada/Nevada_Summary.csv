@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"Nevada",1046,244053,176796,294,23274,16174,28.1070745697897,9.53645314747206,9.14839702255707,496,41997
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"Nevada",1046,244053,176796,17343,294,23274,16174,28.1070745697897,9.53645314747206,9.14839702255707,496,41997

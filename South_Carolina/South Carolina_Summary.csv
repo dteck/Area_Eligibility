@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"South Carolina",2043,417847,305751,530,46771,31476,25.9422418012726,11.1933315304406,10.2946515301667,486,51571
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"South Carolina",2043,417847,305751,20110,530,46771,31476,25.9422418012726,11.1933315304406,10.2946515301667,486,51571

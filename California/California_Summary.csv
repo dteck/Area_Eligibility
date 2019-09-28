@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"California",10940,3186397,2254348,3303,309365,202059,30.1919561243144,9.70892829738416,8.96307934711056,8953,521097
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"California",10940,3186397,2254348,256218,3303,309365,202059,30.1919561243144,9.70892829738416,8.96307934711056,8953,521097

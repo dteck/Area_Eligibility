@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"North Carolina",3898,862625,620829,1006,100075,66768,25.8081067213956,11.6012172148964,10.7546522472372,1233,107115
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"North Carolina",3898,862625,620829,43955,1006,100075,66768,25.8081067213956,11.6012172148964,10.7546522472372,1233,107115

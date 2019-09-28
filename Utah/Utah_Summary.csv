@@ -1,2 +1,2 @@
-"Name","AreasYes","Under18Yes","Under12Yes","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
-"Utah",661,178908,136833,268,38373,27855,40.5446293494705,21.4484539539875,20.3569314419767,761,99477
+"Name","AreasYes","Under18Yes","Under12Yes","Combinations","AreasCalc","Under18Calc","Under12Calc","AreasDeltaPerc","Under18DeltaPerc","Under12DeltaPerc","AreasNo","Under18No"
+"Utah",661,178908,136833,20898,268,38373,27855,40.5446293494705,21.4484539539875,20.3569314419767,761,99477
